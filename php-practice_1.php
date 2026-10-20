@@ -15,16 +15,12 @@ date_default_timezone_set('Asia/Tokyo');
 echo '現在時刻は、'. date('Y年m月d日 H時i分s秒').'です。';
 
 // Q4 条件分岐-1 if文
-$device = 'windows';
-if ($device == 'windows'){
-    echo '使用OSは、windowsです。';
+$device = 'mac';
+if ($device !== 'windows' && $device !== 'mac') {
+    echo 'どちらでもありません。';
 }else{
-    if($device == 'mac'){
-        echo '使用OSは、macです。';
-    }else{
-        echo 'どちらでもありません。';
+    echo '使用OSは' . $device . 'です。';
     }
-}
 
 // Q5 条件分岐-2 三項演算子
 $age = 19;
@@ -116,13 +112,13 @@ function evaluateGrade($grade) {
     switch($grade){
         case 'A':
         case 'B':
-        return '合格です。';
+         return '合格です。';
         case 'C':
-        return '合格ですが追加課題があります。';
+         return '合格ですが追加課題があります。';
         case 'D':
-        return '不合格です。';
+         return '不合格です。';
         default:
-        return '判定不明です。講師に問い合わせてください。';
+         return '判定不明です。講師に問い合わせてください。';
     }
 }
 echo evaluateGrade('A')."\n";
